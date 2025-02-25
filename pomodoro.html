@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+       
+       /* Appliquer une image de fond avec un flou pour un effet plus esthétique */
+body {
+    background: url("background.jpg") no-repeat center center/cover;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(5px); /* Effet flou sur l'arrière-plan */
+}
+
+/* Style du conteneur */
+div {
+    background: rgba(40, 42, 54, 0.9); /* Légèrement transparent pour plus d'effet */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Effet d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Titre */
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #f8f8f2;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Section des boutons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Style des boutons */
+button {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 30%;
+    color: white;
+    background: linear-gradient(135deg, #ff79c6, #bd93f9);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet hover */
+button:hover {
+    background: linear-gradient(135deg, #bd93f9, #ff79c6);
+    transform: scale(1.05);
+}
+
+/* Effet d'appui */
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div>
+    <h1>⏳ Minuteur Pomodoro</h1>
+    <div id="status">Travail</div>
+    <div id="timer">25:00</div>
+    <button onclick="startStopTimer()">Démarrer / Arrêter</button>
+</div>
+    <script>
+        let isRunning = false;
+        let isWorkTime = true;
+        let timeLeft =  3; 
+        let timer;
+        //arrêter un intervalle qui a été précédemment défini avec setInterval().
+        function startStopTimer() {
+            if (isRunning) {
+                clearInterval(timer);
+                isRunning = false;
+            } else {
+                timer = setInterval(updateTimer, 1000);
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if (timeLeft <= 0) {
+                isWorkTime = !isWorkTime;
+                timeLeft = isWorkTime ? 3 : 5 * 60;
+                document.getElementById("status").innerText = isWorkTime ? "Travail" : "Pause";
+                document.getElementById("status").className = isWorkTime ? "work" : "break";
+                alert(isWorkTime ? "Retour au travail !" : "Pause bien méritée !");
+            }
+
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById("timer").innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            timeLeft--;
+        }
+    </script>
+    <button class="top-button" id="start-all-btn"> <a href="portfolio.html">Retour</a></button><br>
+
+</body>
+</html>
