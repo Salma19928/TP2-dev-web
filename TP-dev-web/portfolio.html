@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Salma Ben-Tahir</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Barre de navigation */
+        .navbar {
+            background-color: #9300b8;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #6d0087;
+        }
+
+        /* Pour éviter que le contenu ne soit caché sous la navbar */
+        .content {
+            padding-top: 70px;
+        }
+
+        .hero {
+            background-color: rgb(243, 133, 235);
+            color: white;
+            padding: 50px;
+        }
+
+        .about {
+            padding: 50px;
+            text-align: center;
+        }
+        
+
+        .projects {
+            background-color: rgb(237, 219, 243);
+            margin: 50px;
+            padding: 50px;
+        }
+
+        .contact {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        a {
+            color: rgb(239, 6, 247);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .photo-profil {
+            width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        details {
+            margin-top: 10px;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #9300b8;
+        }
+        p {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-left: 5px solid #72a1d4;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+strong {
+    color: #007bff;
+}
+
+#paragrphe {
+    text-align: justify;
+}
+
+.photo-profil {
+    position:left ;
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.skills {
+            background-color: rgb(237, 219, 243);
+            margin: 50px;
+            padding: 50px;
+            border-radius: 10px;
+        }
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 20px; /* Espacement entre les éléments */
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.grid-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 80px; /* Taille des images */
+    height: auto;
+    margin-bottom: 10px;
+}
+.barre {
+  background-color: #2e314d; /* Couleur de fond de la barre */
+  color: white; /* Couleur du texte */
+  text-align: center; /* Centrer le texte */
+  padding: 20px; /* Espacement à l'intérieur de la barre */
+}
+
+h1 {
+  margin: 0; /* Enlever la marge par défaut autour du titre */
+}
+
+       
+    </style>
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <a href="#about">À Propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+        <a href="form.html">Login</a>
+    </nav>
+
+    <div class="content">
+        <div class="hero">
+            <h3>Bienvenue sur mon Portfolio</h3>
+            <h1>Je suis <strong>Salma Ben-Tahir</strong></h1>
+        </div>
+
+        <div id="about" class="about">
+            <img src="image 1.jpg" alt="Ma photo de profil" class="photo-profil">
+            <h2>À propos de moi</h2>
+            <p id="paragrphe">Je suis étudiante à l'ENSA en première année <br>
+                d'<strong>Informatique et Ingénierie des données</strong>.<br> 
+                 Passionnée par la technologie et l'innovation,<br>
+                  j' explores divers domaines liés à l'informatique,<br>
+                  comme la programmation, l'analyse de données et l'intelligence artificielle.<br>
+                   je cherche constamment à approfondir mes connaissances et à<br>
+                 développer mes compétences pour réussir dans le monde de l'ingénierie.</p>
+            
+        </div>
+
+          <div id="projects" div>
+            <h2>Mes Projets</h2>
+
+            <div class="projects">
+                <h3>Un site web</h3>
+                <p>Un site d'agence aérienne avec intégration d'un système de réservation de vols.</p>
+                <details>
+                    <summary>Voir plus</summary>
+                    <p>Ce site permet d'ajouter, modifier et supprimer des données concernant les réservations.</p>
+                </details>
+            </div>
+
+            <div class="projects">
+                <h3>Le Traitement d'Image</h3>
+                <p>Un programme Python permettant d'effectuer divers traitements sur une image.</p>
+                <details>
+                    <summary>Voir plus</summary>
+                    <p>Le code inclut des fonctionnalités telles que l'ajustement de la luminosité, la rotation de l'image, 
+                        et la conversion en noir et blanc.</p>
+                </details>
+            </div>
+            <div class="projects">
+                <h3>Pomodoro</h3>
+                <p>C'ect programme qui calule le temps</p>
+                <details>
+                    <summary>Voir plus</summary>
+                    <p><a href="pomodoro.html">Pomodoro Timer</a></p>
+                </details>
+            </div>
+               <div id="competences" ></div>
+                <h2  class="competences">Compétences</h2>
+                <h3>Voici les langages de programmation que je connais :</h3>
+                
+                <div  class="grid-container">
+                    <div class="grid-item">
+                        <img src="python.jpg" alt="Python" class="logo">
+                        <h3>✔️ Python</h3>
+                    </div>
+                    <div class="grid-item">
+                        <img src="html.png" alt="HTML" class="logo">
+                        <h3>✔️ HTML</h3>
+                    </div>
+                    <div class="grid-item">
+                        <img src="css.png" alt="CSS" class="logo">
+                        <h3>✔️ CSS</h3>
+                    </div>
+                    <div class="grid-item">
+                        <img src="JS.png" alt="JavaScript" class="logo">
+                        <h3>✔️ JavaScript</h3>
+                    </div>
+                    <div class="grid-item">
+                        <img src="C.png" alt="Language C" class="logo">
+                        <h3>✔️ Language C</h3>
+                    </div>
+                    <div class="grid-item">
+                        <img src="SQL.png" alt="SQL" class="logo">
+                        <h3>✔️ SQL</h3>
+                    </div>
+                </div>                
+               
+            
+       
+
+        <div id="contact" class="contact">
+            <h2>Me Contacter</h2>
+            <p>Email : <a href="mailto:ben-tahirsalma@gmail.com">ben-tahirsalma@gmail.com</a></p>
+            <p>LinkedIn : <a href="https://www.linkedin.com/in/salma-ben-tahir-b53673315/" target="_blank">Salma Ben-Tahir</a></p>
+            <p>Téléphone : 06 12 13 14 15</p>
+        </div>
+    </div>
+  
+</body>
+</html>
